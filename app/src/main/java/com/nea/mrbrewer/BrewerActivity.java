@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class BrewerActivity extends AppCompatActivity {
-    @BindView(R.id.findBrewersButton)  Button mFindBrewersButton;
-    @BindView(R.id.locationEditText)
-    @BindView(R.id.appNameTextView) TextView mAppNameTextView;
+    @BindView(R.id.locationTextView) TextView mLocationTextView;
+    @BindView(R.id.listView) ListView mListView;
 
     private String[] beers = new String[]{"Tusker", "Balozi", "Pilsner", "Stout", "Porter", "Bock", "Weissbie", "Lambic"};
 
@@ -28,8 +28,7 @@ public class BrewerActivity extends AppCompatActivity {
 
         mListView = (ListView) findViewById ( R.id.listView );
         mLocationTextView = (TextView) findViewById ( R.id.locationTextView );
-        mFindBrewersButton = (Button) findViewById(R.id.findBrewersButton);
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
         ArrayAdapter adapter = new ArrayAdapter ( this, android.R.layout.simple_list_item_1, beers );
         mListView.setAdapter ( adapter );
 
