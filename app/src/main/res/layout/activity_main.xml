@@ -33,7 +33,7 @@
         android:layout_above="@+id/findBrewersButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Enter Zip Code"
+        android:hint="Search Beer"
         android:layout_centerHorizontal="true" />
 
     <Button
