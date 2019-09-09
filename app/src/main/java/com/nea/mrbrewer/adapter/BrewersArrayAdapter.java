@@ -1,29 +1,29 @@
-package com.nea.mrbrewer;
+package com.nea.mrbrewer.adapter;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
 public class BrewersArrayAdapter extends ArrayAdapter {
     private Context mContext;
-    private String[] mBeers;
-    private String[] mBrewers;
+    private String[] mBooks;
+    private String[] mVerses;
 
-    public BrewersArrayAdapter(Context mContext, int resource, String[] mBeers, String[] mBrewers) {
+    public BrewersArrayAdapter(Context mContext, int resource, String[] mBooks, String[] mVerses) {
         super(mContext, resource);
         this.mContext = mContext;
-        this.mBeers = mBeers;
-        this.mBrewers = mBrewers;
+        this.mBooks = mBooks;
+        this.mVerses = mVerses;
     }
 
     @Override
     public Object getItem(int position) {
-        String beer = mBeers[position];
-        String brewer = mBrewers[position];
+        String beer = mBooks[position];
+        String brewer = mVerses[position];
         return String.format("%s \nServes great: %s",beer, brewer);
     }
 
     @Override
     public int getCount() {
-        return mBeers.length;
+        return mBooks.length;
     }
 }

@@ -1,4 +1,4 @@
-package com.nea.mrbrewer;
+package com.nea.mrbrewer.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,14 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.nea.mrbrewer.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.findBrewersButton)
     Button mfindBrewersButton;
-    @BindView(R.id.locationEditText)
-    EditText mLocationEditText;
+
     @BindView(R.id.appNameTextView)
     TextView mAppNameTextView;
 
@@ -32,13 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(View v) {
-                if (v == mfindBrewersButton) {
-                    String location = mLocationEditText.getText ().toString ();
-                    Intent intent = new Intent ( MainActivity.this, BrewerActivity.class );
-                    intent.putExtra ( "location", location );
+                    Intent intent = new Intent ( MainActivity.this, BibleListActivity.class );
                     startActivity ( intent );
                 }
-            }
         } );
     }
 

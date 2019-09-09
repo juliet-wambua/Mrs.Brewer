@@ -1,4 +1,4 @@
-package com.nea.mrbrewer;
+package com.nea.mrbrewer.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nea.mrbrewer.R;
 
 import java.io.IOException;
 
@@ -49,12 +51,12 @@ public class BrewerActivity extends AppCompatActivity {
         } );
 
         Intent intent = getIntent();
-        String beer = intent.getStringExtra("beers");
-        mLocationTextView.setText("Here are all the Beers: " + beers);
+        String beer = intent.getStringExtra("bible");
+        mLocationTextView.setText(beer);
     }
-    private void getBeer(String[] beers) {
+    private void getBeer(String[] beer) {
         final BrewerService brewerService = new BrewerService ();
-        brewerService.findBrewers ( beers, new Callback () {
+        brewerService.findBrewers ( beer, new Callback () {
 
             @Override
             public void onFailure(Call call, IOException e) {
