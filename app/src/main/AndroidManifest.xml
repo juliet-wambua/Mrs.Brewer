@@ -18,13 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.BrewerActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nea.mrbrewer.ui.MainActivity">
-            </meta-data>
-        </activity>
+        <activity android:name=".ui.BibleListActivity" android:theme="@style/TextAppearance.AppCompat"></activity>
     </application>
 
 </manifest>
